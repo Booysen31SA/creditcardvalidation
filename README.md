@@ -70,20 +70,20 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ## Requirements
-Build a front-end application that can do the following:\
+Build a front-end application that can do the following: \
 • Allow the user to submit credit card details, including the country that it is
-from.\
+from. \
 • Check the specified country to make sure it doesn’t exist in a list of banned
-countries.\
-• Make the list of banned countries configurable.\
-• If the card is valid – store it somewhere for the session.\
-• Display all the credit cards that have been captured during the session.\
-• Don’t capture the same card twice.\
+countries. \
+• Make the list of banned countries configurable. \
+• If the card is valid – store it somewhere for the session. \
+• Display all the credit cards that have been captured during the session. \
+• Don’t capture the same card twice. \
 
 ## GITHUB repo
 
 • git init \
 • git add -A \
 • git commit -m 'Added my project' \
-• git remote add origin https://github.com/Booysen31SA/creditcardvalidation.git\
-• git push -u -f origin master\
+• git remote add origin https://github.com/Booysen31SA/creditcardvalidation.git \
+• git push -u -f origin master \
