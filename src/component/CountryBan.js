@@ -46,25 +46,30 @@ const CountryBan = () => {
             </div>
 
             <div className='view-container'>
-                        <div className='table-responsive'>
-                            <table className='table'>
-                                <thead>
-                                    <tr>
-                                        <th>Banned Country</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {bannedCountries.length < 1 && <div>No books are added yet</div>}
-                                    {
-                                        bannedCountries.length > 0 && <>
-                                            <View bannedCountries={bannedCountries} deleteCountry={deleteCountry} />
-                                        </>
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
+                <div className='table-responsive'>
+                    <table className='table'>
+                        <thead>
+                            <tr>
+                                <th>Banned Country</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {bannedCountries.length < 1 && <div>No books are added yet</div>}
+                            {
+                                bannedCountries.length > 0 && <>
+                                    <View bannedCountries={bannedCountries} deleteCountry={deleteCountry} />
+                                </>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                {
+                    bannedCountries.length > 0 && <>
                         <button className='btn btn-danger btn-md'
                             onClick={removeAll}>Remove All</button>
+                    </>
+                }
+
             </div>
         </div>
 
