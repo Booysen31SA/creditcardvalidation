@@ -46,8 +46,6 @@ const CountryBan = () => {
             </div>
 
             <div className='view-container'>
-                {
-                    bannedCountries.length > 0 && <>
                         <div className='table-responsive'>
                             <table className='table'>
                                 <thead>
@@ -56,15 +54,17 @@ const CountryBan = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <View bannedCountries={bannedCountries} deleteCountry={deleteCountry} />
+                                    {bannedCountries.length < 1 && <div>No books are added yet</div>}
+                                    {
+                                        bannedCountries.length > 0 && <>
+                                            <View bannedCountries={bannedCountries} deleteCountry={deleteCountry} />
+                                        </>
+                                    }
                                 </tbody>
                             </table>
                         </div>
                         <button className='btn btn-danger btn-md'
-                            onClick={ removeAll }>Remove All</button>
-                    </>
-                }
-                {bannedCountries.length < 1 && <div>No books are added yet</div>}
+                            onClick={removeAll}>Remove All</button>
             </div>
         </div>
 
