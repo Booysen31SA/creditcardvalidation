@@ -1,0 +1,34 @@
+.container {
+    margin-top: 2%;
+    ;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .inputs {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  span{
+    margin-left: 5%;
+  }
+
+  .view-container{
+    width: 600px;    
+    background-color: #e4e4e4;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.delete-btn{
+  color: red;
+  cursor: pointer;
+}
+
+tbody{
+  margin-top: 25px;
+}
