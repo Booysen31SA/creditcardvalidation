@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import validateInfo from './validateInfo'
 
 // getting the values of local storage
@@ -12,11 +12,26 @@ const getDatafromLS = () => {
     }
 }
 
+// getting the values of local storage
+const getDatafromSS = () => {
+    const data = sessionStorage.getItem('saveCreditCard');
+    if (data) {
+        return JSON.parse(data);
+    }
+    else {
+        return []
+    }
+}
+
 const useForm = () => {
     //man array of objects
     const [bannedCountries, setBanCountry] = useState(getDatafromLS)
 
+    //input fields
     const [countrySelect, setSelectedCountry] = useState() 
+
+    //main array
+    const [creditCardList, setCreditCardList ] = useState(getDatafromSS)
 
 
     const isCountryBanned = (country) => {
@@ -79,7 +94,6 @@ const useForm = () => {
 
         // check if country is banned
         banned = isCountryBanned(countrySelect)
-        console.log(countrySelect);
 
         if(banned){
             e.preventDefault()
@@ -88,10 +102,35 @@ const useForm = () => {
 
         if(!banned) {
         e.preventDefault()
-        setErrors(validateInfo(values))
+
+        let er = validateInfo(values);
+            
+        if(er.variant && !isCardStored(values.cardNumber)) {
+            setCreditCardList([...creditCardList, values])
+        }
+
+        if(isCardStored(values.cardNumber)){
+            console.log('card is stored');
+            setErrors({
+                message: 'Card is already stored',
+                show: true
+            })
+        }else{
+            setErrors(validateInfo(values))
+        }
+        
         }
     };
-    
+
+    const isCardStored = (card) => {
+        return creditCardList.some(cards => cards.cardNumber === card)
+    }
+
+     // saving data to local storage
+     useEffect(() => {
+         sessionStorage.setItem('saveCreditCard', JSON.stringify(creditCardList));
+     }, [creditCardList])
+
     return { handleChange, handleFocus, handleSubmit, values, errors };
 };
 
