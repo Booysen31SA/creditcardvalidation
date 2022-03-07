@@ -13,11 +13,10 @@ const CountryBan = () => {
 
 
     return (
-        <div className="container">
-            <div>
-                <div className="box justify-content-center align-items-center">
-                    <h1>BAN A COUNTRY</h1>
-                    <h3>Add and view banned countries</h3>
+ 
+        <div className="container flex-direction">
+            <div className='countrybanScreen'>
+                <div className="box justify-content-center ">
                     <div className="formDiv">
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className='inputs'>

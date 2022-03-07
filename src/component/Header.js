@@ -7,26 +7,29 @@ import {
 } from 'react-router-dom'
 import CreditCardVerfication from './CreditCardVerfication'
 import CountryBan from './CountryBan'
+import './Header.css'
 
 const Header = () => {
     return (
-        <Router>
-            <div>
-                <ul className="App-header">
-                    <li>
-                        <Link to="/verfication">Verfication</Link>
-                    </li>
-                    <li>
-                        <Link to="/ban">Ban</Link>
-                    </li>
-                </ul>
-                <Routes>
-                 <Route exact path='/verfication' element={<CreditCardVerfication />}></Route>
-                 <Route exact path='/ban' element={<CountryBan />}></Route>
-          </Routes>
-            </div>
-        </Router>
 
+        <header class="header-fixed">
+            <Router>
+                <div class="header-limiter">
+
+                    <h1>React Assessment</h1>
+
+                    <nav>
+                        <Link to="/">Verfication</Link>
+                        <Link to="/ban">Ban</Link>
+                    </nav>
+                    <Routes>
+                        <Route exact path='/' element={<CreditCardVerfication />}></Route>
+                        <Route exact path='/ban' element={<CountryBan />}></Route>
+                    </Routes>
+
+                </div>
+            </Router>
+        </header>
     )
 }
 
