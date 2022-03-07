@@ -61,7 +61,7 @@ const useBan = () => {
         localStorage.setItem('bannedCountries', JSON.stringify(bannedCountries));
     }, [bannedCountries])
 
-    return { handleCountryban, handleSubmit, deleteCountry, removeAll, bannedCountries };
+    return { handleCountryban, handleSubmit, deleteCountry, removeAll, bannedCountries, isCountryBanned };
 
 }
 

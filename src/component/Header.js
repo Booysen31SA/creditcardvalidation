@@ -12,9 +12,9 @@ import './Header.css'
 const Header = () => {
     return (
 
-        <header class='header-fixed'>
+        <header className='header-fixed'>
             <Router>
-                <div class='header-limiter'>
+                <div className='header-limiter'>
 
                     <h1>React Assessment</h1>
 
