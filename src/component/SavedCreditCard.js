@@ -3,22 +3,12 @@ import { useState } from 'react'
 import { Icon } from 'react-icons-kit'
 import { trash } from 'react-icons-kit/feather/trash'
 import './SavedCreditCard.css'
-
-// getting the values of local storage
-const getDatafromSS = () => {
-    const data = sessionStorage.getItem('saveCreditCard');
-    if (data) {
-        return JSON.parse(data);
-    }
-    else {
-        return []
-    }
-}
+import useForm from '../useForm'
 
 const SavedCreditCard = () => {
 
-    //main array
-    const [creditCardList, setCreditCardList] = useState(getDatafromSS)
+    
+    const { deleteCard, removeAll, creditCardList } = useForm();
 
     return (
         <div className='container flex-direction'>
@@ -47,7 +37,7 @@ const SavedCreditCard = () => {
                                             <td>{creditCard.cardExpiration}</td>
                                             <td>{creditCard.cardSecurityCode}</td>
                                             <td>{creditCard.country}</td>
-                                            <td className='delete-btn' >
+                                            <td className='delete-btn' onClick = { () => deleteCard(creditCard.cardNumber)}>
                                                 <Icon icon={trash} />
                                             </td>
                                         </tr>
@@ -63,7 +53,7 @@ const SavedCreditCard = () => {
                 {
                     creditCardList.length > 0 && <>
                         <button className='btn btn-danger btn-md'
-                            >Remove All</button>
+                            onClick={removeAll}>Remove All</button>
                     </>
                 }
 

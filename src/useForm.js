@@ -126,12 +126,23 @@ const useForm = () => {
         return creditCardList.some(cards => cards.cardNumber === card)
     }
 
+    const deleteCard = (cardNumber) => {
+        const newCreditCardList = creditCardList.filter(card => card.cardNumber !== cardNumber);
+        setCreditCardList(newCreditCardList);
+        sessionStorage.setItem('saveCreditCard', JSON.stringify(newCreditCardList));
+    }
+
+    const removeAll = () => {
+        setCreditCardList([])
+        sessionStorage.removeItem('saveCreditCard');
+    }
+
      // saving data to local storage
      useEffect(() => {
          sessionStorage.setItem('saveCreditCard', JSON.stringify(creditCardList));
      }, [creditCardList])
 
-    return { handleChange, handleFocus, handleSubmit, values, errors };
+    return { handleChange, handleFocus, handleSubmit, values, errors, deleteCard, removeAll, creditCardList };
 };
 
 export default useForm; 
