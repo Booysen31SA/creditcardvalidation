@@ -19,6 +19,7 @@ const CountryBan = () => {
                     <div className='formDiv'>
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className='inputs'>
+                                <h1 className='bodyTextClolour'>Select a country to ban</h1>
                                 <Form.Select
                                     name='country'
                                     onChange={handleCountryban}
