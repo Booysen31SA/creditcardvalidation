@@ -54,7 +54,7 @@ const CountryBan = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {bannedCountries.length < 1 && <div>No books are added yet</div>}
+                            {bannedCountries.length < 1 && <div>No Countries are banned</div>}
                             {
                                 bannedCountries.length > 0 && <>
                                     <View bannedCountries={bannedCountries} deleteCountry={deleteCountry} />

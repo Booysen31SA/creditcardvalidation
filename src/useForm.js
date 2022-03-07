@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import validateInfo from './validateInfo'
-import useban from './useBan';
 
 // getting the values of local storage
 const getDatafromLS = () => {
@@ -19,7 +18,6 @@ const useForm = () => {
 
     const [countrySelect, setSelectedCountry] = useState() 
 
-    let isBanned = {}
 
     const isCountryBanned = (country) => {
         return bannedCountries.some(ban => ban.banCountry === country)
