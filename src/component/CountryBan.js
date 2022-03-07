@@ -1,9 +1,8 @@
-import React, { useMemo } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./CountryBan.css";
-import { Button, Form, Alert, Row, Col } from "react-bootstrap";
+import React, { useMemo } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './CountryBan.css'
+import { Button, Form } from 'react-bootstrap'
 import countryList from 'react-select-country-list'
-import { useState } from 'react'
 import useban from '../useBan'
 import View from './View'
 
@@ -14,16 +13,16 @@ const CountryBan = () => {
 
     return (
  
-        <div className="container flex-direction">
+        <div className='container flex-direction'>
             <div className='countrybanScreen'>
-                <div className="box justify-content-center ">
-                    <div className="formDiv">
+                <div className='box justify-content-center '>
+                    <div className='formDiv'>
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className='inputs'>
                                 <Form.Select
-                                    name="country"
+                                    name='country'
                                     onChange={handleCountryban}
-                                    className=".inputs"
+                                    className='.inputs'
                                 >
                                     {
                                         options.map((option, index) => {
@@ -33,9 +32,9 @@ const CountryBan = () => {
                                 </Form.Select>
                             </Form.Group>
                             <Button
-                                size={"block"}
-                                id="banButton"
-                                type="submit"
+                                size={'block'}
+                                id='banButton'
+                                type='submit'
                             >
                                 BAN COUNTRY
                             </Button>

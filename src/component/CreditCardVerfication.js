@@ -1,10 +1,10 @@
-import React, { useMemo } from "react";
-import useForm from "../useForm";
-import { Button, Form, Alert, Row, Col } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./CreditCardVerfication.css";
-import Cards from "react-credit-cards";
-import "react-credit-cards/es/styles-compiled.css";
+import React, { useMemo } from 'react'
+import useForm from '../useForm';
+import { Button, Form, Alert, Row, Col } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './CreditCardVerfication.css'
+import Cards from 'react-credit-cards'
+import 'react-credit-cards/es/styles-compiled.css'
 import countryList from 'react-select-country-list'
 
 
@@ -15,10 +15,10 @@ const CreditCardVerfication = () => {
 
     return (
         <div>
-            <div className="container">
-                <div className="box justify-content-center align-items-center">
-                    <div className="formDiv">
-                        <div className="creditCard">
+            <div className='container'>
+                <div className='box justify-content-center align-items-center'>
+                    <div className='formDiv'>
+                        <div className='creditCard'>
                             <Cards
                                 cvc={values.cardSecurityCode}
                                 expiry={values.cardExpiration}
@@ -30,9 +30,9 @@ const CreditCardVerfication = () => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className='inputs'>
                                 <Form.Select
-                                    name="country"
-                                    id="country"
-                                    placeholder="country"
+                                    name='country'
+                                    id='country'
+                                    placeholder='country'
                                     onChange={handleChange.bind(this)}
                                     onFocus={handleFocus}
                                 >
@@ -45,10 +45,10 @@ const CreditCardVerfication = () => {
                             </Form.Group>
                             <Form.Group className='inputs'>
                                 <Form.Control
-                                    type="text"
-                                    id="cardName"
-                                    name="cardName"
-                                    placeholder="Cardholder Name"
+                                    type='text'
+                                    id='cardName'
+                                    name='cardName'
+                                    placeholder='Cardholder Name'
                                     value={values.cardName}
                                     onChange={handleChange}
                                     onFocus={handleFocus}
@@ -57,11 +57,11 @@ const CreditCardVerfication = () => {
                             </Form.Group>
                             <Form.Group className='inputs'>
                                 <Form.Control
-                                    type="number"
-                                    id="cardNumber"
-                                    data-testid="cardNumber"
-                                    name="cardNumber"
-                                    placeholder="Card Number"
+                                    type='number'
+                                    id='cardNumber'
+                                    data-testid='cardNumber'
+                                    name='cardNumber'
+                                    placeholder='Card Number'
                                     value={values.cardNumber}
                                     onChange={handleChange}
                                     onFocus={handleFocus}
@@ -72,11 +72,11 @@ const CreditCardVerfication = () => {
                                 <Col>
                                     <Form.Group className='inputs'>
                                         <Form.Control
-                                            type="text"
-                                            id="cardExpiration"
-                                            data-testid="cardExpiration"
-                                            name="cardExpiration"
-                                            placeholder="MM/YY eg 06/30"
+                                            type='text'
+                                            id='cardExpiration'
+                                            data-testid='cardExpiration'
+                                            name='cardExpiration'
+                                            placeholder='MM/YY eg 06/30'
                                             value={values.cardExpiration}
                                             onChange={handleChange}
                                             onFocus={handleFocus}
@@ -87,11 +87,11 @@ const CreditCardVerfication = () => {
                                 <Col>
                                     <Form.Group className='inputs'>
                                         <Form.Control
-                                            type="number"
-                                            id="cardSecurityCode"
-                                            data-testid="cardSecurityCode"
-                                            name="cardSecurityCode"
-                                            placeholder="Security Code"
+                                            type='number'
+                                            id='cardSecurityCode'
+                                            data-testid='cardSecurityCode'
+                                            name='cardSecurityCode'
+                                            placeholder='Security Code'
                                             value={values.cardSecurityCode}
                                             onChange={handleChange}
                                             onFocus={handleFocus}
@@ -101,10 +101,10 @@ const CreditCardVerfication = () => {
                                 </Col>
                             </Row>
                             <Button
-                                size={"block"}
-                                data-testid="validateButton"
-                                id="validateButton"
-                                type="submit"
+                                size={'block'}
+                                data-testid='validateButton'
+                                id='validateButton'
+                                type='submit'
                             >
                                 Validate
                             </Button>
@@ -113,8 +113,8 @@ const CreditCardVerfication = () => {
                     {
                         errors.message && <>
                             <Alert
-                                id="alertMessage"
-                                data-testid="alertMessage"
+                                id='alertMessage'
+                                data-testid='alertMessage'
                                 variant={errors.variant}
                                 show={errors.show}
                             >

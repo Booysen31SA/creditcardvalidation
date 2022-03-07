@@ -12,15 +12,15 @@ import './Header.css'
 const Header = () => {
     return (
 
-        <header class="header-fixed">
+        <header class='header-fixed'>
             <Router>
-                <div class="header-limiter">
+                <div class='header-limiter'>
 
                     <h1>React Assessment</h1>
 
                     <nav>
-                        <Link to="/">Verfication</Link>
-                        <Link to="/ban">Ban</Link>
+                        <Link to='/'>Verfication</Link>
+                        <Link to='/ban'>Ban</Link>
                     </nav>
                     <Routes>
                         <Route exact path='/' element={<CreditCardVerfication />}></Route>
