@@ -25,6 +25,7 @@ const CountryBan = () => {
                                     onChange={handleCountryban}
                                     className='.inputs'
                                 >
+                                    <option value="none" selected disabled hidden>Select an Option</option>
                                     {
                                         options.map((option, index) => {
                                             return (<option key={index} value={option.label}>{option.label}</option>)
