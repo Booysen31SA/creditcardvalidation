@@ -10,11 +10,11 @@ import countryList from 'react-select-country-list'
 
 const CreditCardVerfication = () => {
 
-  const { handleChange, handleFocus, handleSubmit, values, errors } = useForm();
-  const options = useMemo(() => countryList().getData(), [])
+    const { handleChange, handleFocus, handleSubmit, values, errors } = useForm();
+    const options = useMemo(() => countryList().getData(), [])
 
-  return (
-    <div>
+    return (
+        <div>
             <div className="container">
                 <div className="box justify-content-center align-items-center">
                     <div className="formDiv">
@@ -30,11 +30,11 @@ const CreditCardVerfication = () => {
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className='inputs'>
                                 <Form.Select
-                                name="country"
-                                id="country"
-                                placeholder="country"
-                                onChange={handleChange.bind(this)}
-                                onFocus={handleFocus}
+                                    name="country"
+                                    id="country"
+                                    placeholder="country"
+                                    onChange={handleChange.bind(this)}
+                                    onFocus={handleFocus}
                                 >
                                     {
                                         options.map((option, index) => {
@@ -110,14 +110,19 @@ const CreditCardVerfication = () => {
                             </Button>
                         </Form>
                     </div>
-                    <Alert
-                        id="alertMessage"
-                        data-testid="alertMessage"
-                        variant={errors.variant}
-                        show={errors.show}
-                    >
-                        {errors.message}
-                    </Alert>
+                    {
+                        errors.message && <>
+                            <Alert
+                                id="alertMessage"
+                                data-testid="alertMessage"
+                                variant={errors.variant}
+                                show={errors.show}
+                            >
+                                {errors.message}
+                            </Alert>
+                        </>
+                    }
+
                 </div>
             </div>
         </div>
