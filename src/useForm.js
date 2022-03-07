@@ -100,7 +100,7 @@ const useForm = () => {
             setErrors(isBannedFunction(banned))
         }
 
-        if(!banned) {
+        if(!banned && countrySelect.length > 1) {
         e.preventDefault()
 
         let er = validateInfo(values);
