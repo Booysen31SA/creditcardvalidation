@@ -17,6 +17,8 @@ const useForm = () => {
     //man array of objects
     const [bannedCountries, setBanCountry] = useState(getDatafromLS)
 
+    const [countrySelect, setSelectedCountry] = useState() 
+
     let isBanned = {}
 
     const isCountryBanned = (country) => {
@@ -55,6 +57,7 @@ const useForm = () => {
         
         const { name, value } = e.target
         let banned = false;
+        setSelectedCountry(value)
 
         // check if country is banned
         banned = isCountryBanned(value)
@@ -74,8 +77,21 @@ const useForm = () => {
     }
 
     const handleSubmit = e => {
+        let banned = false;
+
+        // check if country is banned
+        banned = isCountryBanned(countrySelect)
+        console.log(countrySelect);
+
+        if(banned){
+            e.preventDefault()
+            setErrors(isBannedFunction(banned))
+        }
+
+        if(!banned) {
         e.preventDefault()
         setErrors(validateInfo(values))
+        }
     };
     
     return { handleChange, handleFocus, handleSubmit, values, errors };
