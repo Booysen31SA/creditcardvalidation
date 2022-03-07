@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Icon } from 'react-icons-kit'
 import { trash } from 'react-icons-kit/feather/trash'
+import './SavedCreditCard.css'
 
 // getting the values of local storage
 const getDatafromSS = () => {
@@ -21,7 +22,7 @@ const SavedCreditCard = () => {
 
     return (
         <div className='container flex-direction'>
-            <div className='view-container'>
+            <div className='creditcardList-container'>
                 <div className='table-responsive'>
                     <h1 style={{ color: "#000" }}>Saved Credit cards</h1>
                     <table className='table'>
