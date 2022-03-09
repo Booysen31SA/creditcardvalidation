@@ -1,0 +1,60 @@
+.container {
+  margin-top: 20%;
+  width: 100%;
+  display:inline-flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.countryheading{
+  color: #000;
+}
+
+.countrybanScreen {
+  float: left;
+  margin-right: 20px;
+}
+
+.inputs {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+span {
+  margin-left: 5%;
+}
+
+.view-container {
+  width: 600px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -1px 8px 15px 0px rgb(0 0 0 / 44%);
+  border-radius: 10px;
+}
+
+.delete-btn {
+  color: red;
+  cursor: pointer;
+}
+
+tbody {
+  margin-top: 25px;
+}
+
+.bodyTextClolour{
+  color: #000;
+}
+
+@media screen and (max-width: 1200px) {
+  .container{
+    margin-left: 5%;
+  }
+  .countrybanScreen {
+    float: none;
+    margin-right: 0;
+    width: auto;
+    border: 0;
+    border-bottom: 2px solid #000;
+  }
+}
